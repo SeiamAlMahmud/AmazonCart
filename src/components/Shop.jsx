@@ -1,12 +1,20 @@
 import React from 'react'
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
+import productsList from "../fakeData/products.json"
 function Shop() {
 
     const [theme, setTheme] = useState("light");
+
+
     useEffect(()=> {
       document.querySelector('html').setAttribute("data-theme", theme);
     },[theme]);
-
+   
+    useEffect(() => {
+        fetch("../fakeData/products.json")
+        .then(res => res.json())
+        .then
+    })
 
     const toogleHandle = (e) => {
         if(e.target.checked){
@@ -16,7 +24,9 @@ function Shop() {
         }
     }
   return (
-    <><div className="navbar bg-base-100">
+    <>
+    
+    <div className="navbar bg-base-100">
     <div className="flex-1">
       <a className="btn btn-ghost text-xl">daisyUI</a>
     </div>
